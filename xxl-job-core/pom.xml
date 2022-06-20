@@ -15,6 +15,13 @@
 
 	<dependencies>
 
+		<!-- xxl-rpc-core -->
+		<dependency>
+			<groupId>com.xuxueli</groupId>
+			<artifactId>xxl-rpc-core</artifactId>
+			<version>${xxl-rpc.version}</version>
+		</dependency>
+
 		<!-- ********************** embed server: netty + gson ********************** -->
 		<dependency>
 			<groupId>io.netty</groupId>

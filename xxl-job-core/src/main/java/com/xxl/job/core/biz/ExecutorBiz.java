@@ -16,30 +16,51 @@ public interface ExecutorBiz {
     /**
      * idle beat
      *
-     * @param idleBeatParam
-     * @return
      */
     public ReturnT<String> idleBeat(IdleBeatParam idleBeatParam);
 
     /**
      * run
-     * @param triggerParam
-     * @return
      */
     public ReturnT<String> run(TriggerParam triggerParam);
 
     /**
      * kill
-     * @param killParam
-     * @return
      */
     public ReturnT<String> kill(KillParam killParam);
 
     /**
      * log
-     * @param logParam
-     * @return
      */
     public ReturnT<LogResult> log(LogParam logParam);
+
+    /**
+     * idle beat
+     *
+     * @deprecated Only for old version
+     */
+    @Deprecated
+    default ReturnT<String> idleBeat(int jobId) {
+        return ReturnT.SUCCESS;
+    }
+
+    /**
+     * kill
+     *
+     * @deprecated Only for old version
+     */
+    default ReturnT<String> kill(int jobId) {
+        return ReturnT.SUCCESS;
+    }
+
+    /**
+     * log
+     *
+     * @deprecated Only for old version
+     */
+    @Deprecated
+    default ReturnT<LogResult> log(long logDateTim, long logId, int fromLineNum) {
+        return new ReturnT<>(new LogResult());
+    }
 
 }

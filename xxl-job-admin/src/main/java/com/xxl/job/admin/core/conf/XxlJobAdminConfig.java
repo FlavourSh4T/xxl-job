@@ -3,6 +3,7 @@ package com.xxl.job.admin.core.conf;
 import com.xxl.job.admin.core.alarm.JobAlarmer;
 import com.xxl.job.admin.core.scheduler.XxlJobScheduler;
 import com.xxl.job.admin.dao.*;
+import com.xxl.job.core.biz.AdminBiz;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
@@ -82,6 +83,8 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
     @Resource
     private JavaMailSender mailSender;
     @Resource
+    private AdminBiz adminBiz;
+    @Resource
     private DataSource dataSource;
     @Resource
     private JobAlarmer jobAlarmer;
@@ -145,6 +148,10 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
 
     public JavaMailSender getMailSender() {
         return mailSender;
+    }
+
+    public AdminBiz getAdminBiz() {
+        return adminBiz;
     }
 
     public DataSource getDataSource() {

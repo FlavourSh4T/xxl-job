@@ -18,6 +18,8 @@ public class TriggerParam implements Serializable{
     private long logId;
     private long logDateTime;
 
+    private long logDateTim;
+
     private String glueType;
     private String glueSource;
     private long glueUpdatetime;
@@ -80,6 +82,15 @@ public class TriggerParam implements Serializable{
 
     public void setLogDateTime(long logDateTime) {
         this.logDateTime = logDateTime;
+        this.logDateTim = this.logDateTime;
+    }
+
+    public long getLogDateTim() {
+        return logDateTim;
+    }
+
+    public void setLogDateTim(long logDateTim) {
+        this.logDateTim = logDateTim;
     }
 
     public String getGlueType() {
